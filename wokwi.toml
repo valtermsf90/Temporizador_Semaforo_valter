@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware ='build/Clock_temporizador.uf2'
+elf = 'build/Clock_temporizaor.ellf'

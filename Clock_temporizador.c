@@ -3,7 +3,7 @@
 #include "hardware/timer.h"
 
 #define LED_G 11 // pino led verde
-#define LED_Y 12 // pino led amarelo
+#define LED_B 12 // pino led amarelo
 #define LED_R 13 // pino led vermelho
 
 bool status = true;
@@ -53,8 +53,10 @@ int main()
     // inicia GPIO
     gpio_init(LED_G);
     gpio_init(LED_R);
+    gpio_init(LED_B);
     gpio_set_dir(LED_G, GPIO_OUT);
     gpio_set_dir(LED_R, GPIO_OUT);
+    gpio_set_dir(LED_B, GPIO_OUT);
 
     // inicia led vermelho ligado
     gpio_put(LED_R, status);
