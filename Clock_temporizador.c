@@ -3,7 +3,7 @@
 #include "hardware/timer.h"
 
 #define LED_G 11 // pino led verde
-
+#define LED_Y 12 // pino led amarelo
 #define LED_R 13 // pino led vermelho
 
 bool status = true;
@@ -26,19 +26,20 @@ bool semaforo(struct repeating_timer *t)
     case 1: // vermelho
         gpio_put(LED_G, !status);
         gpio_put(LED_R, status);
+        gpio_put(LED_B, !status);
         printf("PARE\n");
         break;
     case 2: // amarelo
-        gpio_put(LED_G, status);
-        gpio_put(LED_R, status);
+        gpio_put(LED_G, !status);        
+        gpio_put(LED_R, !status);        
+        gpio_put(LED_B, status);
         printf("ATENÇÃO\n");
         break;
     case 3: // verde
         gpio_put(LED_G, status);
         gpio_put(LED_R, !status);
+        gpio_put(LED_B, !status);
         printf("SIGA\n");
-        break;
-    default:
         break;
     }
     return true;
@@ -71,3 +72,11 @@ int main()
 
     return 0;
 }
+ void altera_sinal(int sinal){
+     switch (sinal) {// verifica sinal
+    
+    default:
+        break;
+    }
+ 
+ }
