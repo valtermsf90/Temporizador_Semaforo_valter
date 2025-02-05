@@ -74,11 +74,3 @@ int main()
 
     return 0;
 }
- void altera_sinal(int sinal){
-     switch (sinal) {// verifica sinal
-    
-    default:
-        break;
-    }
- 
- }
